@@ -6,6 +6,8 @@ COPY . .
 
 RUN npm ci
 
+RUN CI=true npm test
+
 ARG REACT_APP_BACKEND_URL
 
 RUN REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL} npm run build
