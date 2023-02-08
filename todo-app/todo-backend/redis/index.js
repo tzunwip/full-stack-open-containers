@@ -21,10 +21,6 @@ if (!REDIS_URL) {
 
   client.on("ready", () => console.log("Redis Ready!"))
 
-  client.on("error", function(error) {
-    console.error(error);
-  });
-
   getAsync = promisify(client.get).bind(client)
   setAsync = promisify(client.set).bind(client)
   incrAsync = promisify(client.incr).bind(client)
