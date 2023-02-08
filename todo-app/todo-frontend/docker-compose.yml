@@ -2,6 +2,7 @@ version: '3.9'
 
 services:
   web:
+    image: todo-frontend-web
     build:
       context: .
       args:

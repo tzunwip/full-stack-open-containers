@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  dev:
+    image: todo-frontend-dev
+    build:
+      context: . 
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app 
+    ports:
+      - 3001:3001
+    environment:
+      REACT_APP_BACKEND_URL: http://localhost:3000
+    container_name: todo-frontend-dev 
