@@ -2,9 +2,11 @@ FROM node:16 AS build-stage
 
 WORKDIR /usr/src/app
 
-COPY . .
+COPY package* .
 
 RUN npm ci
+
+COPY . .
 
 RUN CI=true npm test
 
